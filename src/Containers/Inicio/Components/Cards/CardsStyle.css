@@ -1,0 +1,19 @@
+.Productos{
+    padding: 20px;
+}
+
+.CardProducto{
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    background-color:rgb(145, 35, 35) ;
+}
+
+.CardProducto h2{
+    display: flex;
+    justify-content: center;
+}
+
+.CardProducto:hover{
+border: 3px solid black;
+}
