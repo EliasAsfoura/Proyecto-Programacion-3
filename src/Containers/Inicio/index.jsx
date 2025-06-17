@@ -8,6 +8,7 @@ const Inicio = () => {
         <>
             <Header />
 
+
             <Cards/>
 
             <Footer />

@@ -1,19 +1,53 @@
 .Productos{
-    padding: 20px;
+    position: relative;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px ;
+    flex-wrap: wrap;
+    font-family: 'Anton';
 }
 
 .CardProducto{
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 220px;
     height: 300px;
-    border-radius: 5px;
-    background-color:rgb(145, 35, 35) ;
+    border-radius: 8px;
+    background-color:rgb(255, 255, 255) ;
+    border: 1px solid black;
 }
 
 .CardProducto h2{
     display: flex;
     justify-content: center;
+    font-size: 18px;
 }
 
 .CardProducto:hover{
-border: 3px solid black;
+border: 2.3px solid black;
+}
+
+.CajaBotonProducto{
+    display: flex;
+    justify-content: center;
+}
+
+.CajaBotonProducto button{
+    width: 150px;
+    gap: 10px;
+    color: white;
+    background-color: #006CBD;
+    border-radius: 8px;
+    border: none;
+    font-family:"Archivo Black", sans-serif;
+    font-size: small;
+    font-weight: 100;
+}
+
+.CajaBotonProducto :hover{
+    background-color: #023f72;
 }

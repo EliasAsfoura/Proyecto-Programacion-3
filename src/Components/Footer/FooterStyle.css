@@ -1,9 +1,13 @@
-/* CSS */
+body {
+    margin: 0;
+}
+
 .site-footer {
     background-color: #cccbcb;
     color: #333;
     font-family: 'Anton';
     padding: 30px;
+    
 }
 
 .footerContent {
