@@ -1,5 +1,6 @@
 import {BrowserRouter as Router,Routes,Route, Navigate,} from "react-router-dom";
 import Inicio from "./Containers/Inicio";
+import Productos from "./Containers/Productos";
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 <Router>
       <Routes>
       <Route path="/" element={<Navigate to="/inicio" replace />} />
-        <Route path="/inicio" element ={<Inicio/>}/>
+        <Route path="/inicio" element ={<Productos/>}/>
       </Routes>
 </Router>
   )
