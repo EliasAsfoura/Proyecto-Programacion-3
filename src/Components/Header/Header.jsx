@@ -9,10 +9,10 @@ import "./HeaderStyle.css"
 const Header = () => {
 
     return (
-        <div class="headerContainer">
-            <div class="headerBackground" />
+        <div class="CajaContainer">
+            <div class="BackgroundHeader" />
             <img src={LogoHeader} alt="Logo-Header" style={{position: "absolute"}} />
-            <div class="headerContent">
+            <div class="ContenidoHeader">
                 
 
                 
@@ -22,13 +22,13 @@ const Header = () => {
                 
 
                 
-                    <a href="">
+                    <a href="/productos">
                         <img src={ProductosHeader} alt="" />
                     </a>
                 
 
                 
-                    <a href="">
+                    <a href="/contacto">
                         <img src={ContactoHeader} alt="" />
                     </a>
                 

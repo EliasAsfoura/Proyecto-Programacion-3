@@ -1,12 +1,12 @@
 
- .headerContainer {
+ .CajaContainer {
    top: 0;
    left: 0;
    width: 100%;
    z-index: 1;
  }
 
- .headerBackground {
+ .BackgroundHeader {
    width: 100%;
    height: 130px;
    background-color: #cccbcb;
@@ -15,7 +15,7 @@
    z-index: 0;
  }
 
- .headerBackground::before {
+ .BackgroundHeader::before {
   content: '';
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
 }
 
-.headerBackground::after {
+.BackgroundHeader::after {
   content: '';
   position: absolute;
   top: 0;
@@ -39,7 +39,7 @@
   clip-path: polygon(100% 0, 0 0, 30% 100%, 100% 100%);
 }
 
- .headerContent{
+ .ContenidoHeader{
    padding: 50px 15px;
    display: flex;
    justify-content: end;

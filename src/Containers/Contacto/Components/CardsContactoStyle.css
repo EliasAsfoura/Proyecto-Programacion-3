@@ -1,0 +1,35 @@
+.CardsContacto{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    font-family: 'Anton',sans-serif;
+    margin: 20px
+}
+
+.Card {
+      width: 350px;
+      height: 500px;
+      background-color: #d9d9d9;
+      border: 1px solid #0077cc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .Card h3 {
+      font-size: 20px;
+      color: #000000;
+      text-shadow: 1px 3px 2px rgba(0,0,0,0.2);
+      -webkit-text-stroke: 0.5px #0077cc;
+    }
+
+    .CajaRedes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 80px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }

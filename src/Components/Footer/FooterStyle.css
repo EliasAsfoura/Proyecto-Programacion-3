@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.site-footer {
+.CajaFooter {
     background-color: #cccbcb;
     color: #333;
     font-family: 'Anton';
@@ -11,7 +11,7 @@ body {
 
 
 
-.footerContent {
+.ContenidoFooter {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -21,31 +21,31 @@ body {
 }
 
 
-.footerColumn h4 {
+.ColumnasFooter h4 {
     margin-bottom: 10px;
     font-size: 20px;
 }
 
-.footerColumn ul {
+.ColumnasFooter ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.footerColumn li+li {
+.ColumnasFooter li+li {
     margin-top: 8px;
 }
 
-.footerColumn a {
+.ColumnasFooter a {
     text-decoration: none;
     color: inherit;
 }
 
-.footerColumn a:hover {
+.ColumnasFooter a:hover {
     text-decoration: underline;
 }
 
-.footer-bottom {
+.FooterBottom {
     margin-top: 32px;
     text-align: center;
     font-size: 16px;
