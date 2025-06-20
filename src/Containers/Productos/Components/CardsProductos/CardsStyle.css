@@ -46,8 +46,10 @@ border: 2.3px solid black;
     font-family:"Archivo Black", sans-serif;
     font-size: small;
     font-weight: 100;
+    transition: background .25s ease;
 }
 
 .CajaBotonProducto :hover{
     background-color: #023f72;
+    transition: background .25s ease;
 }

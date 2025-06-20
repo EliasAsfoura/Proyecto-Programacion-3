@@ -3,6 +3,7 @@ import InicioHeader from "../../assets/InicioHeader.svg"
 import ProductosHeader from "../../assets/ProductosHeader.svg"
 import ContactoHeader from "../../assets/ContactoHeader.svg"
 import MiCarritoHeader from "../../assets/MiCarritoHeader.svg"
+import LoginHeader from "../../assets/LoginHeader.svg"
 import "./HeaderStyle.css"
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
                 
 
                 
-                    <a href="">
+                    <a href="/inicio">
                         <img src={InicioHeader} alt="" />
                     </a>
                 
@@ -35,6 +36,10 @@ const Header = () => {
                 
                     <a href="">
                         <img src={MiCarritoHeader} alt="" />
+                    </a>
+
+                    <a href="/login">
+                        <img src={LoginHeader} alt="" />
                     </a>
                 
 
