@@ -3,6 +3,8 @@ import Inicio from "./Containers/Inicio";
 import Productos from "./Containers/Productos";
 import Login from "./Containers/Login";
 import Contacto from "./Containers/Contacto";
+import ViewProduct from "./Containers/viewProduct";
+
 
 
 function App() {
@@ -15,8 +17,7 @@ function App() {
         <Route path="/productos" element ={<Productos/>}/>
         <Route path="/contacto" element ={<Contacto/>}/>
         <Route path="/login" element ={<Login/>}/>
-        
-
+        <Route path="/viewProduct" element ={<ViewProduct/>}/>
       </Routes>
 </Router>
   )
