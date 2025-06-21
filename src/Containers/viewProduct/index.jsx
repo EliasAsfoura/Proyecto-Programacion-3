@@ -4,13 +4,15 @@ import ProductCardView from "./Components/ProductCardView";
 
 
 const ViewProduct = () => {
-    return(
+    return (
         <>
-        <Header/>
+            <Header />
 
-        <ProductCardView/>
-
-        <Footer/>
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <ProductCardView />
+            </div>
+            
+            <Footer />
         </>
     )
 }

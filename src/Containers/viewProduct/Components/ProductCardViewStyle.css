@@ -1,6 +1,7 @@
 .CajaVistaProducto{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #fff;
     width: 900px;
     margin: 100px;
@@ -13,3 +14,57 @@
     flex-direction: column;
     align-items: center;
 }
+
+.TextoProducto h2{
+    font-family: 'Anton';
+    text-align: center;
+    text-decoration: underline;
+}
+
+.ContadorCaja {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ED2841;
+  color: white;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  border: 2px solid black;
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.ContadorBoton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.CajaAgregarCarrito{
+    margin-top: 40px;
+}
+
+.ButtonAgregarCarrito{
+    width: 220px;
+    height: 70px;
+    color: #000000;
+    background-color: #006BBD;
+    border-radius: 8px;
+    border: 2px solid black;
+    font-family:"Anton", sans-serif;
+    font-size: 20px;
+    transition: background .25s ease;
+    cursor: pointer;
+}
+
+.CajaAgregarCarrito :hover{
+    background-color: #023f72;
+    transition: background .25s ease;
+}
+
