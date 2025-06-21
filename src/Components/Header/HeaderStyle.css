@@ -1,21 +1,20 @@
+.CajaContainer {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 
- .CajaContainer {
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 1;
- }
+.BackgroundHeader {
+  width: 100%;
+  height: 130px;
+  background-color: #cccbcb;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+}
 
- .BackgroundHeader {
-   width: 100%;
-   height: 130px;
-   background-color: #cccbcb;
-   box-sizing: border-box;
-   position: absolute;
-   z-index: 0;
- }
-
- .BackgroundHeader::before {
+.BackgroundHeader::before {
   content: '';
   position: absolute;
   top: 0;
@@ -39,12 +38,18 @@
   clip-path: polygon(100% 0, 0 0, 30% 100%, 100% 100%);
 }
 
- .ContenidoHeader{
-   padding: 50px 15px;
-   display: flex;
-   justify-content: end;
-   position: relative;
-   z-index: 0;
-   gap: 50px;
- }
+.BuscadorProductos {
+  margin-right: 35px;
+  display: flex;
+  border-radius: 5px;
+  width:200px;
+}
 
+.ContenidoHeader {
+  padding: 50px 15px;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  z-index: 0;
+  gap: 50px;
+}

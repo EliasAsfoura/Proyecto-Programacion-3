@@ -7,10 +7,22 @@ import HuevoKinder from "../../Assets-Productos/HuevoKinder.jpg"
 import MirindaManzana from "../../Assets-Productos/MirindaManzana.jpg"
 import "./CardsStyle.css"
 
+ export const object = (
+        
+        <div className="CardProductoCarrito">
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "70px", height: "70px" }} />
+                </div>
+            </div>
+)        
+
 const Cards = () => {
 
     return (
+
+        
         <main className="Productos">
+
 
             <div className="CardProducto">
                 <h2>Aceite</h2>

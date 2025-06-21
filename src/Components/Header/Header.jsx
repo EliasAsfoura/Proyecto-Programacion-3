@@ -13,7 +13,7 @@ const Header = () => {
             <div class="BackgroundHeader" />
             <img src={LogoHeader} alt="Logo-Header" style={{position: "absolute"}} />
             <div class="ContenidoHeader">
-                
+                <input className="BuscadorProductos" type="search" name="" id="" placeholder="Buscar productos.."/>
 
                 
                     <a href="/inicio">
@@ -34,7 +34,7 @@ const Header = () => {
                 
 
                 
-                    <a href="">
+                    <a href="/carrito">
                         <img src={MiCarritoHeader} alt="" />
                     </a>
 
