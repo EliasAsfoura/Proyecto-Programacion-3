@@ -1,93 +1,99 @@
-import { object } from "../../Productos/Components/CardsProductos/Cards"
+import AceiteDeGirasol from "../../Productos/Assets-Productos/AceiteDeGirasol.jpg"
+import PapasLays from "../../Productos/Assets-Productos/PapasLays.jpeg"
 import "./CarroDeComprasStyle.css"
 
 const CarroDeCompras = () => {
     return (
-        <><section class="cart-wrapper">
+        <>
 
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th class="col-item" scope="col">Producto</th>
-                        <th class="col-price" scope="col">Precio</th>
-                        <th class="col-qty" scope="col">Cantidad</th>
-                        <th class="col-sub" scope="col">Subtotal</th>
-                        <th class="col-act" scope="col"></th>
-                    </tr>
-                </thead>
+            <section className="CajaCarrito">
 
-                <tbody>
+                <table className="TablaCarro">
+                    <thead>
+                        <tr>
+                            <th className="ColumnaItem" scope="col">Producto</th>
+                            <th className="ColumnaPrecio" scope="col">Precio</th>
+                            <th className="ColumnaCantidad" scope="col">Cantidad</th>
+                            <th className="ColumnaSubtotal" scope="col">Subtotal</th>
+                            <th className="ColumnaAccion" scope="col"></th>
+                        </tr>
+                    </thead>
 
-                    <tr>
-                        <td class="prod-info">
-                            <img src="shirt-black.jpg" alt="2023-24 Al Hilal Puma Training Shirt" class="thumb" />
-                            <span class="title">2023-24 Al Hilal Puma Training Shirt - 7/10 - (M)</span>
-                        </td>
+                    <tbody>
 
-                        <td class="price">$19.99</td>
+                        <tr>
+                            <td className="InfoProducto">
+                                <img src={AceiteDeGirasol} alt="ImageProduct" className="thumb" />
+                                <span>Aceite de girasol - Natura 900ml</span>
+                            </td>
 
-                        <td class="qty">
-                            <input type="number" min="1" value="1" />
-                        </td>
+                            <td>$2.900</td>
 
-                        <td class="subtotal">$19.99</td>
+                            <td className="Cantidad">
+                                <input type="number" min="1" value="1" />
+                            </td>
 
-                        <td class="actions">
-                            <button class="icon edit" >
-                                ✏️
-                            </button>
+                            <td>$2.900</td>
 
-                        </td>
-                    </tr>
+                            <td className="Acciones">
+                                <button className="IconoEdit">✏️</button>
+                                <button className="IconoRemover"><span>🗙</span></button>
+                            </td>
+                        </tr>
 
 
-                    <tr>
-                        <td class="prod-info">
-                            <img src="shirt-blue.jpg" alt="2017-18 Al Hilal Third Shirt" class="thumb" />
-                            <span class="title">2017-18 Al Hilal Third Shirt - 7/10 - (XL)</span>
-                        </td>
+                        <tr>
+                            <td className="InfoProducto">
+                                <img src={PapasLays} alt="ImageProduct" className="thumb" />
+                                <span>Papas Lays 100g</span>
+                            </td>
 
-                        <td class="price">$44.99</td>
+                            <td>$1.500</td>
 
-                        <td class="qty">
-                            <input type="number" min="1" value="1" />
-                        </td>
+                            <td className="Cantidad">
+                                <input type="number" min="1" value="1" />
+                            </td>
 
-                        <td class="subtotal">$44.99</td>
+                            <td >$1.500</td>
 
-                        <td class="actions">
-                            <button class="icon edit" aria-label="Edit quantity">✏️</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                            <td classNameName="Acciones">
+                                <button className="IconoEdit">✏️</button>
+                                <button className="IconoRemover"><span>🗙</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <div class="cart-actions">
-                <button class="link clear">Clear Cart</button>
-                <button class="btn update">Update Cart</button>
-            </div>
-        </section><aside class="summary-panel">
+                <div className="AccionesGeneralesCarro">
+                    <button className="BotonClear">Limpiar Carrito</button>
+                    <button className="BotonUpdate">Actualizar Carrito</button>
+                </div>
+            </section>
+
+            <aside className="PanelCompra">
+
                 <h3>Resumen</h3>
-            <details class="shipping">
+                <details className="Envio">
                     <summary>Estimado Compra y Envio</summary>
-
                 </details>
 
-                <div class="line">
+                <div className="TotalPrecio">
                     <span>Subtotal</span>
-                    <span class="value">$64.98</span>
+                    <span>$4.400</span>
                 </div>
 
                 <hr />
 
-                <div class="line grand">
-                    <span>Grand Total</span>
-                    <span class="value">$64.98</span>
+                <div className="TotalPrecio">
+                    <span>Total</span>
+                    <span>4.400</span>
                 </div>
 
-                <button class="btn checkout">Hacer checkout</button>
-                
-            </aside></>
+                <button className="BotonCheckout">Hacer checkout</button>
+
+            </aside>
+
+        </>
     )
 }
 

@@ -1,14 +1,14 @@
 import Footer from "../../Components/Footer/Footer";
-import HeaderLogin from "./Components/HeaderLogin/HeaderLogin";
-import LoginBox from "./Components/LoginBox/LoginBox";
+import HeaderLogin from "../Login/Components/HeaderLogin/HeaderLogin";
+import RegisterBox from "./Components/RegisterBox/RegisterBox";
 
-const Login = () => {
+const Register = () => {
     return (
         <>
         <HeaderLogin/>
 
         <div style={{ display:"flex", justifyContent: "center", padding: "50px"}}>
-            <LoginBox/>
+            <RegisterBox/>
         </div>
 
         <Footer/>
@@ -16,4 +16,4 @@ const Login = () => {
     )
 }
 
-export default Login;
+export default Register;
