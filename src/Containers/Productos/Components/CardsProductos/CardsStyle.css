@@ -1,11 +1,10 @@
 .Productos{
     position: relative;
-    width: 60%;
-    margin-left: 20%;
+    width: 70%;
+    margin-left: 27%;
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding: 10px ;
     flex-wrap: wrap;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

@@ -26,9 +26,9 @@ const Carrusel = () => {
                 <div><img src={Carrusel1} alt="1"/></div>
                 <div><img src={Carrusel2} alt="2" /></div>
                 <div><img src={Carrusel3} alt="3"/></div>
-                <div><img src={Carrusel4} alt="3"/></div>
-                <div><img src={Carrusel5} alt="3"/></div>
-                <div><img src={Carrusel6} alt="3"/></div>
+                <div><img src={Carrusel4} alt="4"/></div>
+                <div><img src={Carrusel5} alt="5"/></div>
+                <div><img src={Carrusel6} alt="6"/></div>
             </Slider>
         </div>
     );

@@ -29,6 +29,58 @@ const Cards = () => {
                 </div>
                 </a>
             </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
 
             <div className="CardProducto">
                 <h2>Papas Lays Clasicas</h2>
