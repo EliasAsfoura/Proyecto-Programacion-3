@@ -9,11 +9,12 @@ import "./HeaderStyle.css"
 const Header = () => {
 
     return (
-        <div class="CajaContainer">
-            <div class="BackgroundHeader" />
+        <div className="CajaContainer">
+            <div className="BackgroundHeader" />
             <img src={LogoHeader} alt="Logo-Header" style={{position: "absolute"}} />
-            <div class="ContenidoHeader">
-                
+            <div className="ContenidoHeader">
+
+                <input className="BuscadorProductos" type="search" name="" id="" placeholder="Buscar productos.."/>
 
                 
                     <a href="/inicio">
@@ -34,14 +35,13 @@ const Header = () => {
                 
 
                 
-                    <a href="">
+                    <a href="/carrito">
                         <img src={MiCarritoHeader} alt="" />
                     </a>
 
                     <a href="/login">
                         <img src={LoginHeader} alt="" />
                     </a>
-                
 
             </div>
         </div>

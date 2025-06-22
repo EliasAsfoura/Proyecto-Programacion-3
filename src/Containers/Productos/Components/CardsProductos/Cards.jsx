@@ -7,12 +7,17 @@ import HuevoKinder from "../../Assets-Productos/HuevoKinder.jpg"
 import MirindaManzana from "../../Assets-Productos/MirindaManzana.jpg"
 import "./CardsStyle.css"
 
+
 const Cards = () => {
 
     return (
+
+        
         <main className="Productos">
 
+
             <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
                 <h2>Aceite</h2>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
@@ -22,6 +27,59 @@ const Cards = () => {
                         <p>Comprar</p>
                     </button>
                 </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
+            </div>
+            <div className="CardProducto">
+                <a href="/viewproduct" style={{textDecoration: "none"}}>
+                <h2>Aceite</h2>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
+                </div>
+                <div className="CajaBotonProducto">
+                    <button >
+                        <p>Comprar</p>
+                    </button>
+                </div>
+                </a>
             </div>
 
             <div className="CardProducto">

@@ -4,6 +4,8 @@ import Productos from "./Containers/Productos";
 import Login from "./Containers/Login";
 import Contacto from "./Containers/Contacto";
 import ViewProduct from "./Containers/viewProduct";
+import Carrito from "./Containers/Carrito";
+import Register from "./Containers/Register";
 
 
 
@@ -16,7 +18,9 @@ function App() {
         <Route path="/inicio" element ={<Inicio/>}/>
         <Route path="/productos" element ={<Productos/>}/>
         <Route path="/contacto" element ={<Contacto/>}/>
+        <Route path="/carrito" element ={<Carrito/>}/>
         <Route path="/login" element ={<Login/>}/>
+        <Route path="/register" element ={<Register/>}/>
         <Route path="/viewProduct" element ={<ViewProduct/>}/>
       </Routes>
 </Router>

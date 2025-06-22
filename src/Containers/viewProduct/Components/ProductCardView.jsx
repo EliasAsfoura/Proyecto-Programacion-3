@@ -16,7 +16,7 @@ const ProductCardView = () => {
 
             <div className="TextoProducto">
                 <h2>Aceite de girasol
-                    <br/>
+                    <br />
                     Natura - 900ml
                 </h2>
 
@@ -41,9 +41,13 @@ const ProductCardView = () => {
                     <button className="ContadorBoton" onClick={increment}>+</button>
                 </div>
 
+                <div className="CajaPrecio">
+                    <p>Precio: $2900</p>
+                </div>
+
                 <div className="CajaAgregarCarrito">
                     <button className="ButtonAgregarCarrito">
-                       <p>Agregar al carrito</p> 
+                        <p>Agregar al carrito</p>
                     </button>
                 </div>
 
