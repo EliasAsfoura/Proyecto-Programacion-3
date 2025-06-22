@@ -15,7 +15,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/productos', productoRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Servidor funcionando ✅');
+  res.send('Servidor funcionando ');
 });
 
 
