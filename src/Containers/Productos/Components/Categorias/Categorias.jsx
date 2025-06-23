@@ -2,6 +2,7 @@ import "./CategoriasStyle.css"
 
 const Categorias = () => {
     return (
+                        // Categorias
         <div className="CajaCategorias">
             <aside>
                 <div className="CategoriaTexto">

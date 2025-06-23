@@ -5,4 +5,6 @@
     border-radius: 5px;
     display: block;
     overflow: hidden;
-    margin: auto;}
+    margin: auto;
+    margin-bottom: 15px;
+}

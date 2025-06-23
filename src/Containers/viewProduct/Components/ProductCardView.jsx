@@ -53,8 +53,6 @@ const ProductCardView = () => {
 
             </div>
 
-
-
         </div>
     )
 }

@@ -1,9 +1,10 @@
 .Productos{
+    width: 80%;
+    margin-left: 200px;
     position: relative;
-    width: 70%;
-    margin-left: 27%;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 15px;
     flex-wrap: wrap;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -11,7 +12,6 @@
 
 .CardProducto{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 220px;
     height: 300px;
@@ -50,17 +50,4 @@ border: 2.3px solid black;
 .CajaBotonProducto :hover{
     background-color: #023f72;
     transition: background .25s ease;
-}
-
-.CardProductoCarrito{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    width: 80px;
-    height: 100px;
-    border-radius: 8px;
-    background-color:rgb(255, 255, 255) ;
-    border: 1px solid black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

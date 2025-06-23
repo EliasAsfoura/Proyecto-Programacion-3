@@ -1,6 +1,6 @@
 import Footer from "../../Components/Footer/Footer";
 import HeaderLogin from "../Login/Components/HeaderLogin/HeaderLogin";
-import RegisterBox from "./Components/RegisterBox/RegisterBox";
+import RegisterBox from "./Components/RegisterBox";
 
 const Register = () => {
     return (

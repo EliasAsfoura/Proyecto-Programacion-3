@@ -61,6 +61,7 @@ const CardsContacto = () => {
                     </iframe>
                 </div>
             </div>
+
             <div className="CajaRedes">
                 <a href="https://wa.me/3812358721">
                     <img src={NumeroTelefono} alt="" style={{ width: "80%" }} />
@@ -70,6 +71,7 @@ const CardsContacto = () => {
                     <img src={Instagram} alt="" style={{ width: "80%" }} />
                 </a>
             </div>
+
         </div>
     );
 };

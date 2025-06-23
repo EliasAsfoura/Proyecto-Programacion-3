@@ -12,10 +12,8 @@ const Cards = () => {
 
     return (
 
-        
         <main className="Productos">
-
-
+                                {/* Cards de los productos */}
             <div className="CardProducto">
                 <a href="/viewproduct" style={{textDecoration: "none"}}>
                 <h2>Aceite</h2>
@@ -190,4 +188,4 @@ const Cards = () => {
 
 }
 
-export default Cards
+export default Cards;
