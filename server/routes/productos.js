@@ -1,10 +1,8 @@
 import express from 'express';
+import {getProducts, getProductoById} from "../controllers/productController.js"
 
-const router = express.Router();
+const router = express.Router()
+router.get("/", getProducts);
+router.get("/:id", getProductoById);
 
-// Ruta de prueba para productos
-router.get('/test', (req, res) => {
-  res.send('Ruta de productos funcionando ✅');
-});
-
-export default router;
+export default router

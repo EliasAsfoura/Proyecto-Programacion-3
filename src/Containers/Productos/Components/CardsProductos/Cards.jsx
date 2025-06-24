@@ -1,193 +1,46 @@
-import AceiteDeGirasol from "../../Assets-Productos/AceiteDeGirasol.jpg"
-import PapasLays from "../../Assets-Productos/PapasLays.jpeg"
-import GalletasOreo from "../../Assets-Productos/GalletasOreo.jpg"
-import CocaCola from "../../Assets-Productos/CocaCola.jpg"
-import SandwichMiga from "../../Assets-Productos/SandwichMiga.jpg"
-import HuevoKinder from "../../Assets-Productos/HuevoKinder.jpg"
-import MirindaManzana from "../../Assets-Productos/MirindaManzana.jpg"
-import "./CardsStyle.css"
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "./CardsStyle.css";
 
 const Cards = () => {
+  const [productos, setProductos] = useState([]);
 
-    return (
+  useEffect(() => {
+    const fetchProductos = async () => {
+      try {
+        const res = await axios.get("http://localhost:3006/api/productos");
+        setProductos(res.data);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      }
+    };
 
-        
-        <main className="Productos">
+    fetchProductos();
+  }, []);
 
-
-            <div className="CardProducto">
-                <a href="/viewproduct" style={{textDecoration: "none"}}>
-                <h2>Aceite</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-                </a>
+  return (
+    <main className="Productos">
+      {productos.map((producto) => (
+        <div className="CardProducto" key={producto.id}>
+          <a href={`/viewproduct/${producto.id}`} style={{ textDecoration: "none" }}>
+            <h2>{producto.nombre}</h2>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                 src={`/productos-images/${producto.imagen_url}`}
+                 alt={producto.nombre}
+                 style={{ width: "190px", height: "180px" }}
+              />
             </div>
-            <div className="CardProducto">
-                <a href="/viewproduct" style={{textDecoration: "none"}}>
-                <h2>Aceite</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-                </a>
+            <div className="CajaBotonProducto">
+              <button>
+                <p>Comprar</p>
+              </button>
             </div>
-            <div className="CardProducto">
-                <a href="/viewproduct" style={{textDecoration: "none"}}>
-                <h2>Aceite</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-                </a>
-            </div>
-            <div className="CardProducto">
-                <a href="/viewproduct" style={{textDecoration: "none"}}>
-                <h2>Aceite</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-                </a>
-            </div>
-            <div className="CardProducto">
-                <a href="/viewproduct" style={{textDecoration: "none"}}>
-                <h2>Aceite</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={AceiteDeGirasol} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-                </a>
-            </div>
+          </a>
+        </div>
+      ))}
+    </main>
+  );
+};
 
-            <div className="CardProducto">
-                <h2>Papas Lays Clasicas</h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={PapasLays} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-
-            <div className="CardProducto">
-                <h2>
-                    Galletas Oreo
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={GalletasOreo} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-
-            <div className="CardProducto">
-                <h2>
-                    Coca Cola
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={CocaCola} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-
-            <div className="CardProducto">
-                <h2>
-                    Sandwich de miga
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={SandwichMiga} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-
-            <div className="CardProducto">
-                <h2>
-                    Huevo Kinder
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={HuevoKinder} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>
-                            Comprar
-                        </p>
-                    </button>
-                </div>
-            </div>
-            <div className="CardProducto">
-                <h2>
-                    Huevo Kinder
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={HuevoKinder} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>
-                            Comprar
-                        </p>
-                    </button>
-                </div>
-            </div>
-            <div className="CardProducto">
-                <h2>
-                    Mirinda Manzana
-                </h2>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <img src={MirindaManzana} alt="" style={{ width: "190px", height: "180px" }} />
-                </div>
-
-                <div className="CajaBotonProducto">
-                    <button >
-                        <p>
-                            Comprar
-                        </p>
-                    </button>
-                </div>
-            </div>
-
-        </main>
-    )
-
-}
-
-export default Cards
+export default Cards;
