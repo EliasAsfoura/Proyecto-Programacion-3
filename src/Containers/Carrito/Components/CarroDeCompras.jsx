@@ -1,5 +1,5 @@
-import AceiteDeGirasol from "../../Productos/Assets-Productos/AceiteDeGirasol.jpg"
-import PapasLays from "../../Productos/Assets-Productos/PapasLays.jpeg"
+import AceiteDeGirasol from "../../../../public/Assets-Productos/AceiteDeGirasol.jpg"
+import PapasLays from "../../../../public/Assets-Productos/PapasLays.jpeg"
 import "./CarroDeComprasStyle.css"
 
 const CarroDeCompras = () => {

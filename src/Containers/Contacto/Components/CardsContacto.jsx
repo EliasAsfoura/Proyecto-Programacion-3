@@ -1,5 +1,5 @@
-import NumeroTelefono from "../Assets-Contacto/NumeroTelefono.svg"
-import Instagram from "../Assets-Contacto/Instagram.svg"
+import NumeroTelefono from "../../../../public/Assets-Contacto/NumeroTelefono.svg"
+import Instagram from "../../../../public/Assets-Contacto/Instagram.svg"
 import "./CardsContactoStyle.css";
 
 const CardsContacto = () => {

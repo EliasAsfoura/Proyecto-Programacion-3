@@ -10,7 +10,7 @@ const Inicio = () => {
             <Header />
 
             <Carrusel/>
-
+            
             <Cards/>
 
             <Footer />

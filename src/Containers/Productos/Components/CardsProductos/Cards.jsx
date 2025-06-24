@@ -1,10 +1,10 @@
-import AceiteDeGirasol from "../../Assets-Productos/AceiteDeGirasol.jpg"
-import PapasLays from "../../Assets-Productos/PapasLays.jpeg"
-import GalletasOreo from "../../Assets-Productos/GalletasOreo.jpg"
-import CocaCola from "../../Assets-Productos/CocaCola.jpg"
-import SandwichMiga from "../../Assets-Productos/SandwichMiga.jpg"
-import HuevoKinder from "../../Assets-Productos/HuevoKinder.jpg"
-import MirindaManzana from "../../Assets-Productos/MirindaManzana.jpg"
+import AceiteDeGirasol from "../../../../../public/Assets-Productos/AceiteDeGirasol.jpg"
+import PapasLays from "../../../../../public/Assets-Productos/PapasLays.jpeg"
+import GalletasOreo from "../../../../../public/Assets-Productos/GalletasOreo.jpg"
+import CocaCola from "../../../../../public/Assets-Productos/CocaCola.jpg"
+import SandwichMiga from "../../../../../public/Assets-Productos/SandwichMiga.jpg"
+import HuevoKinder from "../../../../../public/Assets-Productos/HuevoKinder.jpg"
+import MirindaManzana from "../../../../../public/Assets-Productos/MirindaManzana.jpg"
 import "./CardsStyle.css"
 
 

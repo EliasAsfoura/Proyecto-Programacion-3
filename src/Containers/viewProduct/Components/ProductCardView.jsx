@@ -1,4 +1,4 @@
-import AceiteDeGirasol from "../../Productos/Assets-Productos/AceiteDeGirasol.jpg";
+import AceiteDeGirasol from "../../../../public/Assets-Productos/AceiteDeGirasol.jpg";
 import "./ProductCardViewStyle.css"
 import React, { useState } from 'react';
 
