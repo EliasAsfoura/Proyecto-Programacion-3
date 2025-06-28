@@ -1,4 +1,5 @@
 import AceiteDeGirasol from '/productos-images/AceiteDeGirasol.jpg';
+import PapasLays from '/productos-images/PapasLays.jpeg';
 
 import "./CarroDeComprasStyle.css"
 
