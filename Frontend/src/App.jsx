@@ -6,6 +6,7 @@ import Contacto from "./Containers/Contacto";
 import ViewProduct from "./Containers/viewProduct";
 import Carrito from "./Containers/Carrito";
 import Register from "./Containers/Register";
+import CreateProduct from "./Containers/CreateProduct/index"
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element ={<Login/>}/>
         <Route path="/register" element ={<Register/>}/>
         <Route path="/viewProduct/:id" element={<ViewProduct />} />
+        <Route path="/createProduct" element={< CreateProduct/>} />
       </Routes>
 </Router>
   )

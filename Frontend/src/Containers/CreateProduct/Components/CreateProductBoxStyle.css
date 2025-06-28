@@ -1,27 +1,54 @@
-.CajaVistaProducto{
+.CajaCrearProducto{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background-color: #fff;
     width: 900px;
+    height: 500px;
     margin: 80px;
+    gap: 50px;
     border: 3px solid black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.TextoProducto{
+.CajaCrearProducto label{
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    font-family: 'anton';
+}
+
+.CajaImg{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.ProductoImagenCrPr{
+    width: 400px;
+    height: 350px;
+}
+
+.TextoCrearProducto{
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.TextoProducto h2{
     font-family: 'Anton';
     text-align: center;
-    text-decoration: underline;
+    gap:3px;
 }
 
-.ContadorCaja {
+.TextoCrearProducto textarea{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.TextoCrearProducto input{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+.ContadorCajaCrPr {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,7 +63,7 @@
   margin-top: 20px;
 }
 
-.ContadorBoton {
+.ContadorBotonCrPr {
   background: none;
   border: none;
   color: white;
@@ -46,12 +73,18 @@
   height: 30px;
 }
 
-.CajaPrecio{
+.CajaPrecioCrPr{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
 }
 
-.ButtonAgregarCarrito{
+
+.CajaAgregarCarritoCrPr{
+    margin-top: 20px;
+}
+
+
+.ButtonAgregarCarritoCrPr{
     width: 220px;
     height: 70px;
     color: #000000;
@@ -63,7 +96,7 @@
     cursor: pointer;
 }
 
-.CajaAgregarCarrito :hover{
+.CajaAgregarCarritoCrPr :hover{
     background-color: #023f72;
     transition: background .25s ease;
 }
