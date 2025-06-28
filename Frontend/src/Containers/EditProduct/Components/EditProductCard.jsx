@@ -1,15 +1,12 @@
-import "./ProductCardViewStyle.css";
+import "./EditProductCardStyle.css";
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const ProductCardView = () => {
+const EditProductCard = () => {
   const { id } = useParams(); // 🆔 Captura el ID de la URL (ej: /viewproduct/1)
   const [producto, setProducto] = useState(null);
-  const [Contador, setContador] = useState(1);
 
-  const increment = () => setContador(prev => prev + 1);
-  const decrement = () => setContador(prev => (prev > 1 ? prev - 1 : 1));
 
   useEffect(() => {
     const fetchProducto = async () => {
@@ -27,40 +24,40 @@ const ProductCardView = () => {
   if (!producto) return <p>Cargando producto...</p>;
 
   return (
-    <div className="CajaVistaProducto">
+    <div className="CajaVistaEditarProducto">
 
+      <button className="BotonEdit">✏️</button>
       <img
         src={`/productos-images/${producto.imagen_url}`}
         alt="ProductImage"
         style={{ width: "30vw", border: "2px solid black", margin: "35px" }}
       />
+      
 
       <div className="TextoProducto">
         <h2>
-          {producto.nombre}
+          {producto.nombre} <button className="BotonEdit">✏️</button>
           <br />
-          {producto.tamanio_unidad}
+          {producto.tamanio_unidad} <button className="BotonEdit">✏️</button>
         </h2>
 
-        <ul>
-          <li>Tipo de producto: {producto.tipo}</li>
-          <li>País de origen: {producto.pais}</li>
-          <li>Tipo de envase: {producto.tipo_de_envase}</li>
+        <ul >
+          <li>Tipo de producto: {producto.tipo} <button className="BotonEdit">✏️</button>  </li>
+          <li>País de origen: {producto.pais} <button className="BotonEdit">✏️</button> </li>          
+          <li>Tipo de envase: {producto.tipo_de_envase} <button className="BotonEdit">✏️</button> </li> 
         </ul>
 
-        <div className="ContadorCaja">
-          <button className="ContadorBoton" onClick={decrement}>−</button>
-          <span>{Contador}</span>
-          <button className="ContadorBoton" onClick={increment}>+</button>
+        <div >
+          <h4>Stock: {producto.stock} <button className="BotonEdit">✏️</button></h4>
         </div>
 
         <div className="CajaPrecio">
-          <p>Precio: ${producto.precio}</p>
+          <p>Precio: ${producto.precio}<button className="BotonEdit">✏️</button></p>
         </div>
 
-        <div className="CajaAgregarCarrito">
-          <button className="ButtonAgregarCarrito">
-            <p>Agregar al carrito</p>
+        <div className="CajaEditarProducto">
+          <button className="ButtonEditarProducto">
+            <p>Editar Producto</p>
           </button>
         </div>
       </div>
@@ -69,4 +66,4 @@ const ProductCardView = () => {
   );
 };
 
-export default ProductCardView;
+export default EditProductCard;

@@ -7,6 +7,7 @@ import ViewProduct from "./Containers/viewProduct";
 import Carrito from "./Containers/Carrito";
 import Register from "./Containers/Register";
 import CreateProduct from "./Containers/CreateProduct/index"
+import EditProduct from "./Containers/EditProduct"
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/register" element ={<Register/>}/>
         <Route path="/viewProduct/:id" element={<ViewProduct />} />
         <Route path="/createProduct" element={< CreateProduct/>} />
+        <Route path="/editProduct/:id" element={< EditProduct/>} />
       </Routes>
 </Router>
   )

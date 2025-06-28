@@ -1,6 +1,6 @@
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
-import ProductCardView from "./Components/ProductCardView";
+import EditProductCard from "./Components/EditProductCard";
 
 
 const EditProduct = () => {
@@ -9,7 +9,7 @@ const EditProduct = () => {
             <Header />
 
             <div style={{display:"flex", justifyContent:"center"}}>
-                <ProductCardView />
+                <EditProductCard />
             </div>
             
             <Footer />
