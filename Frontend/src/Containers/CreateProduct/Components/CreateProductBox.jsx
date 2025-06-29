@@ -1,12 +1,19 @@
-import "./CreateProductBoxStyle.css"
+import "./CreateProductBoxStyle.css";
 import React, { useState } from 'react';
+import axios from "axios";
 
 const CreateProductBox = () => {
     const [producto, setProducto] = useState({
         nombre: 'Aceite de girasol',
-        descripcion: "",
+        descripcion: '',
         precio: 2900,
         stock: 1,
+        imagen_url: 'url de la imagen aqui rey',
+        categoria_id: 6, 
+        tipo: 'Aceites',
+        pais: 'Argentina',
+        tipo_de_envase: 'Plástico',
+        tamanio_unidad: '900ml'
     });
 
     const handleChange = (e) => {
@@ -14,23 +21,30 @@ const CreateProductBox = () => {
         setProducto({ ...producto, [name]: value });
     };
 
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:3006/api/productos", producto);
+            alert("Producto creado con éxito (ID: " + res.data.id + ")");
+        } catch (error) {
+            console.error("Error al crear producto:", error);
+            alert("Error al crear producto");
+        }
+    };
 
     return (
-        <div className="CajaCrearProducto">
-
+        <form className="CajaCrearProducto" onSubmit={handleSubmit}>
             <div className="CajaImg">
                 <label>Imagen del producto (URL):</label>
                 <input
                     type="text"
-                    name="imagen"
-                    value={producto.imagen}
+                    name="imagen_url"
+                    value={producto.imagen_url}
                     onChange={handleChange}
                     placeholder="https://..."
                 />
-
                 <img
-                    src={producto.imagen || 'https://via.placeholder.com/250'}
+                    src={producto.imagen_url || 'https://via.placeholder.com/250'}
                     alt="Vista previa"
                     className="ProductoImagenCrPr"
                 />
@@ -46,49 +60,75 @@ const CreateProductBox = () => {
                     placeholder="Ingrese el nombre del producto"
                 />
 
-
-                <label htmlFor="">Descripcion: </label>
+                <label>Descripción</label>
                 <textarea
-                    id="tipo"
+                    name="descripcion"
+                    value={producto.descripcion}
+                    onChange={handleChange}
+                    rows="3"
+                    placeholder="Descripción del Producto"
+                />
+
+                <label>Tipo</label>
+                <input
+                    type="text"
                     name="tipo"
                     value={producto.tipo}
                     onChange={handleChange}
-                    rows="3"
-                    placeholder="Descripcion del Producto"
+                />
+
+                <label>País</label>
+                <input
+                    type="text"
+                    name="pais"
+                    value={producto.pais}
+                    onChange={handleChange}
+                />
+
+                <label>Tipo de envase</label>
+                <input
+                    type="text"
+                    name="tipo_de_envase"
+                    value={producto.tipo_de_envase}
+                    onChange={handleChange}
+                />
+
+                <label>Tamaño de unidad</label>
+                <input
+                    type="text"
+                    name="tamanio_unidad"
+                    value={producto.tamanio_unidad}
+                    onChange={handleChange}
                 />
 
                 <div className="StockProducto">
-                    <label htmlFor=""> Stock: </label>
-                    <input type="number"
-                    name="stock"
-                    value={producto.stock}
-                    onChange={handleChange} />
+                    <label>Stock</label>
+                    <input
+                        type="number"
+                        name="stock"
+                        value={producto.stock}
+                        onChange={handleChange}
+                    />
                 </div>
 
-
                 <div className="CajaPrecioCrPr">
-
-                    <label htmlFor=""> Precio: </label>
+                    <label>Precio</label>
                     <input
                         type="number"
                         name="precio"
                         value={producto.precio}
                         onChange={handleChange}
                     />
-
                 </div>
 
-
-
                 <div className="CajaAgregarCarritoCrPr">
-                    <button className="ButtonAgregarCarritoCrPr">
+                    <button type="submit" className="ButtonAgregarCarritoCrPr">
                         <p>Subir Producto</p>
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     );
 };
-
 
 export default CreateProductBox;

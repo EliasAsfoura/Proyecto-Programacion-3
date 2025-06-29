@@ -45,3 +45,18 @@
   z-index: 0;
   gap: 40px;
 }
+.Agregar {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.Agregar:visited,
+.Agregar:hover,
+.Agregar:focus,
+.Agregar:active {
+  color: #000000;
+  text-decoration: none;
+}

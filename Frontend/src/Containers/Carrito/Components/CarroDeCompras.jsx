@@ -1,101 +1,95 @@
-import AceiteDeGirasol from '/productos-images/AceiteDeGirasol.jpg';
-import PapasLays from '/productos-images/PapasLays.jpeg';
-
-import "./CarroDeComprasStyle.css"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./CarroDeComprasStyle.css";
 
 const CarroDeCompras = () => {
-    return (
-        <>
+  const [carrito, setCarrito] = useState([]);
 
-            <section className="CajaCarrito">
+  useEffect(() => {
+    const fetchCarrito = async () => {
+      try {
+        const res = await axios.get("http://localhost:3006/api/carrito"); // adaptá si tu endpoint es otro
+        setCarrito(res.data);
+      } catch (error) {
+        console.error("Error al cargar el carrito:", error);
+      }
+    };
 
-                <table className="TablaCarro">
-                    <thead>
-                        <tr>
-                            <th className="ColumnaItem" scope="col">Producto</th>
-                            <th className="ColumnaPrecio" scope="col">Precio</th>
-                            <th className="ColumnaCantidad" scope="col">Cantidad</th>
-                            <th className="ColumnaSubtotal" scope="col">Subtotal</th>
-                            <th className="ColumnaAccion" scope="col"></th>
-                        </tr>
-                    </thead>
+    fetchCarrito();
+  }, []);
 
-                    <tbody>
+  const calcularSubtotal = (item) => item.precio_unitario * item.cantidad;
 
-                        <tr>
-                            <td className="InfoProducto">
-                                <img src={AceiteDeGirasol} alt="ImageProduct" className="thumb" />
-                                <span>Aceite de girasol - Natura 900ml</span>
-                            </td>
+  const calcularTotal = () =>
+    carrito.reduce((total, item) => total + calcularSubtotal(item), 0);
 
-                            <td>$2.900</td>
+  return (
+    <>
+      <section className="CajaCarrito">
+        <table className="TablaCarro">
+          <thead>
+            <tr>
+              <th className="ColumnaItem">Producto</th>
+              <th className="ColumnaPrecio">Precio</th>
+              <th className="ColumnaCantidad">Cantidad</th>
+              <th className="ColumnaSubtotal">Subtotal</th>
+              <th className="ColumnaAccion"></th>
+            </tr>
+          </thead>
 
-                            <td className="Cantidad">
-                                <input type="number" min="1" value="1" />
-                            </td>
+          <tbody>
+            {carrito.map((item) => (
+              <tr key={item.id_producto}>
+                <td className="InfoProducto">
+                  <img
+                    src={`/productos-images/${item.imagen_url}`}
+                    alt={item.nombre}
+                    className="thumb"
+                  />
+                  <span>{item.nombre}</span>
+                </td>
+                <td>${item.precio_unitario}</td>
+                <td className="Cantidad">
+                  <input type="number" min="1" value={item.cantidad} readOnly />
+                </td>
+                <td>${calcularSubtotal(item)}</td>
+                <td className="Acciones">
+                  <button className="IconoEdit">✏️</button>
+                  <button className="IconoRemover">🗙</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-                            <td>$2.900</td>
+        <div className="AccionesGeneralesCarro">
+          <button className="BotonClear">Limpiar Carrito</button>
+          <button className="BotonUpdate">Actualizar Carrito</button>
+        </div>
+      </section>
 
-                            <td className="Acciones">
-                                <button className="IconoEdit">✏️</button>
-                                <button className="IconoRemover"><span>🗙</span></button>
-                            </td>
-                        </tr>
+      <aside className="PanelCompra">
+        <h3>Resumen</h3>
+        <details className="Envio">
+          <summary>Estimado Compra y Envío</summary>
+        </details>
 
+        <div className="TotalPrecio">
+          <span>Subtotal</span>
+          <span>${calcularTotal()}</span>
+        </div>
 
-                        <tr>
-                            <td className="InfoProducto">
-                                <img src={PapasLays} alt="ImageProduct" className="thumb" />
-                                <span>Papas Lays 100g</span>
-                            </td>
+        <hr />
 
-                            <td>$1.500</td>
+        <div className="TotalPrecio">
+          <span>Total</span>
+          <span>${calcularTotal()}</span>
+        </div>
 
-                            <td className="Cantidad">
-                                <input type="number" min="1" value="1" />
-                            </td>
-
-                            <td >$1.500</td>
-
-                            <td classNameName="Acciones">
-                                <button className="IconoEdit">✏️</button>
-                                <button className="IconoRemover"><span>🗙</span></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div className="AccionesGeneralesCarro">
-                    <button className="BotonClear">Limpiar Carrito</button>
-                    <button className="BotonUpdate">Actualizar Carrito</button>
-                </div>
-            </section>
-
-            <aside className="PanelCompra">
-
-                <h3>Resumen</h3>
-                <details className="Envio">
-                    <summary>Estimado Compra y Envio</summary>
-                </details>
-
-                <div className="TotalPrecio">
-                    <span>Subtotal</span>
-                    <span>$4.400</span>
-                </div>
-
-                <hr />
-
-                <div className="TotalPrecio">
-                    <span>Total</span>
-                    <span>4.400</span>
-                </div>
-
-                <button className="BotonCheckout">Hacer checkout</button>
-
-            </aside>
-
-        </>
-    )
-}
+        <button className="BotonCheckout">Hacer checkout</button>
+      </aside>
+    </>
+  );
+};
 
 export default CarroDeCompras;

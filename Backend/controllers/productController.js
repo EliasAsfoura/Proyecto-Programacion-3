@@ -29,3 +29,50 @@ export const getProductoById = async (req, res) => {
     res.status(500).json({ msg: "Error del servidor" });
   }
 };
+// controllers/productController.js
+
+// Crear un nuevo producto
+export const createProduct = async (req, res) => {
+  const {
+    nombre,
+    descripcion,
+    precio,
+    stock,
+    imagen_url,
+    categoria_id,
+    tipo,
+    pais,
+    tipo_de_envase,
+    tamanio_unidad
+  } = req.body;
+
+  if (!nombre || !precio || !stock || !imagen_url || !categoria_id) {
+    return res.status(400).json({ msg: "Faltan campos obligatorios" });
+  }
+
+  try {
+    const [result] = await db.execute(
+      `INSERT INTO productos 
+      (nombre, descripcion, precio, stock, imagen_url, categoria_id, tipo, pais, tipo_de_envase, tamanio_unidad)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        nombre,
+        descripcion || "",
+        precio,
+        stock,
+        imagen_url,
+        categoria_id,
+        tipo || "",
+        pais || "",
+        tipo_de_envase || "",
+        tamanio_unidad || ""
+      ]
+    );
+
+    res.status(201).json({ message: "Producto creado correctamente", id: result.insertId });
+  } catch (error) {
+    console.error("Error al crear producto:", error);
+    res.status(500).json({ message: "Error al crear producto" });
+  }
+};
+

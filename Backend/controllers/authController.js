@@ -55,6 +55,7 @@ export const register = async (req, res) => {
       token,
       nombre: nuevoUsuario.nombre,
       rol: nuevoUsuario.rol,
+      id: nuevoUsuario.id
     });
 
   } catch (error) {
@@ -104,10 +105,11 @@ export const login = async (req, res) => {
       token,
       nombre: usuario.nombre,
       rol: usuario.rol,
+      id: usuario.id 
     });
 
   } catch (error) {
-    console.error("🟥 Error en login:", error);
+    console.error(" Error en login:", error);
     res.status(500).json({ msg: 'Error en el servidor' });
   }
 };

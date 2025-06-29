@@ -18,11 +18,13 @@ const LoginBox = () => {
       });
 
       const data = await res.json();
+      console.log("💬 Respuesta login:", data);
 
       if (res.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("nombre", data.nombre);
         localStorage.setItem("rol", data.rol);
+        localStorage.setItem("id", data.id);
 
         navigate("/productos");
       } else {

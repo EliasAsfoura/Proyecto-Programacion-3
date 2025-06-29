@@ -4,9 +4,11 @@ import ProductosHeader from "../../assets/ProductosHeader.svg"
 import ContactoHeader from "../../assets/ContactoHeader.svg"
 import MiCarritoHeader from "../../assets/MiCarritoHeader.svg"
 import LoginHeader from "../../assets/LoginHeader.svg"
+import AgregarProductos from"../../assets/AgregarProductos.png"
 import "./HeaderStyle.css"
 
 const Header = () => {
+    const rol = localStorage.getItem("rol");
 
     return (
         <div className="CajaContainer">
@@ -14,7 +16,7 @@ const Header = () => {
             <img src={LogoHeader} alt="Logo-Header" style={{position: "absolute"}} />
             <div className="ContenidoHeader">
 
-                <input className="BuscadorProductos" type="search" name="" id="" placeholder="Buscar productos.."/>
+                
 
                 
                     <a href="/inicio">
@@ -35,13 +37,20 @@ const Header = () => {
                 
 
                 
-                    <a href="/carrito">
-                        <img src={MiCarritoHeader} alt="" />
-                    </a>
+                    
 
-                    <a href="/login">
-                        <img src={LoginHeader} alt="" />
-                    </a>
+                {rol === "admin" ? (
+                <a className="Agregar" href="/createProduct">
+                    Agregar Producto
+                </a>
+                ) : (
+               <a href="/carrito">
+                        <img src={MiCarritoHeader} alt="" />
+                </a>
+                )}
+                <a href="/login">
+                    <img src={LoginHeader} alt="Login" />
+                </a>
 
             </div>
         </div>

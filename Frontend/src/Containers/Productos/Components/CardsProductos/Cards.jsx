@@ -26,7 +26,7 @@ const Cards = () => {
             <h2>{producto.nombre}</h2>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
-                 src={`/productos-images/${producto.imagen_url}`}
+                 src={`${producto.imagen_url}`}
                  alt={producto.nombre}
                  style={{ width: "190px", height: "180px" }}
               />
