@@ -1,10 +1,11 @@
 import "./ProductCardViewStyle.css";
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const ProductCardView = () => {
-  const { id } = useParams(); // 🆔 Captura el ID de la URL (ej: /viewproduct/1)
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
   const [Contador, setContador] = useState(1);
 
@@ -24,13 +25,35 @@ const ProductCardView = () => {
     fetchProducto();
   }, [id]);
 
+const handleAgregarAlCarrito = async () => {
+  const usuario_id = parseInt(localStorage.getItem("id"));
+
+  if (!usuario_id) {
+    alert("Por favor, iniciá sesión para agregar productos al carrito");
+    return;
+  }
+
+  try {
+    await axios.post("http://localhost:3006/api/carrito", {
+      usuario_id,
+      producto_id: producto.id,
+      cantidad: Contador,
+      precio_unitario: producto.precio,
+    });
+    navigate("/carrito");
+  } catch (error) {
+    console.error("No se pudo agregar al carrito", error);
+    alert("No se pudo agregar el producto al carrito");
+  }
+};
+
+
   if (!producto) return <p>Cargando producto...</p>;
 
   return (
     <div className="CajaVistaProducto">
-
       <img
-        src={`/productos-images/${producto.imagen_url}`}
+        src={producto.imagen_url}
         alt="ProductImage"
         style={{ width: "30vw", border: "2px solid black", margin: "35px" }}
       />
@@ -58,15 +81,14 @@ const ProductCardView = () => {
           <p>Precio: ${producto.precio}</p>
         </div>
 
-        <div className="CajaAgregarCarrito">
-          <button className="ButtonAgregarCarrito">
-            <p>Agregar al carrito</p>
-          </button>
-        </div>
+        <button className="ButtonAgregarCarrito" onClick={handleAgregarAlCarrito}>
+          <p>Agregar al carrito</p>
+        </button>
       </div>
-
     </div>
   );
 };
 
 export default ProductCardView;
+
+

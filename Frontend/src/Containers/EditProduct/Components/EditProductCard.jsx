@@ -25,10 +25,11 @@ const EditProductCard = () => {
 
   return (
     <div className="CajaVistaEditarProducto">
+      
 
       <button className="BotonEdit">✏️</button>
       <img
-        src={`/productos-images/${producto.imagen_url}`}
+        src={`${producto.imagen_url}`}
         alt="ProductImage"
         style={{ width: "30vw", border: "2px solid black", margin: "35px" }}
       />
