@@ -8,6 +8,9 @@ const ProductCardView = () => {
   const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
   const [Contador, setContador] = useState(1);
+  const handleVolver = () => {
+    navigate("/productos");
+  };
 
   const increment = () => setContador(prev => prev + 1);
   const decrement = () => setContador(prev => (prev > 1 ? prev - 1 : 1));
@@ -25,33 +28,38 @@ const ProductCardView = () => {
     fetchProducto();
   }, [id]);
 
-const handleAgregarAlCarrito = async () => {
-  const usuario_id = parseInt(localStorage.getItem("id"));
+  const handleAgregarAlCarrito = async () => {
+    const usuario_id = parseInt(localStorage.getItem("id"));
 
-  if (!usuario_id) {
-    alert("Por favor, iniciá sesión para agregar productos al carrito");
-    return;
-  }
+    if (!usuario_id) {
+      alert("Por favor, iniciá sesión para agregar productos al carrito");
+      return;
+    }
 
-  try {
-    await axios.post("http://localhost:3006/api/carrito", {
-      usuario_id,
-      producto_id: producto.id,
-      cantidad: Contador,
-      precio_unitario: producto.precio,
-    });
-    navigate("/carrito");
-  } catch (error) {
-    console.error("No se pudo agregar al carrito", error);
-    alert("No se pudo agregar el producto al carrito");
-  }
-};
+    try {
+      await axios.post("http://localhost:3006/api/carrito", {
+        usuario_id,
+        producto_id: producto.id,
+        cantidad: Contador,
+        precio_unitario: producto.precio,
+      });
+      navigate("/carrito");
+    } catch (error) {
+      console.error("No se pudo agregar al carrito", error);
+      alert("No se pudo agregar el producto al carrito");
+    }
+  };
 
 
   if (!producto) return <p>Cargando producto...</p>;
 
   return (
     <div className="CajaVistaProducto">
+
+      <div className="BotonVolverProductos">
+        <button onClick={handleVolver } >X</button>
+      </div>
+
       <img
         src={producto.imagen_url}
         alt="ProductImage"

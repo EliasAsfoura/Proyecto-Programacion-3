@@ -68,3 +68,16 @@
     transition: background .25s ease;
 }
 
+.BotonVolverProductos{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-right: 70px;
+    width: 10px;
+}
+
+.BotonVolverProductos button{
+    background:none;
+}
+

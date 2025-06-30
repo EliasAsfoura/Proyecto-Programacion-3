@@ -10,8 +10,12 @@ const ProductRouterView = () => {
   const rol = localStorage.getItem("rol");
 
   return rol === "admin"
-    ? <EditProductCard id={id} />
-    : <ProductCardView />;
+    ? <div style={{ display: "flex", justifyContent: "center" }}> 
+    <EditProductCard id={id} /> 
+    </div>
+    : <div style={{ display: "flex", justifyContent: "center" }}>
+    <ProductCardView /> 
+    </div>;
 };
 
 export default ProductRouterView;

@@ -9,7 +9,7 @@ const ViewProduct = () => {
             <Header />
 
             <div style={{display:"flex", justifyContent:"center"}}>
-                <ProductCardView />
+                <ProductCardView/>
             </div>
             
             <Footer />

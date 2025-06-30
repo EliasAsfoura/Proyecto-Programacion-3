@@ -3,7 +3,8 @@
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    width: 900px;
+    width: 1000px;
+    height: 500px;
     margin: 80px;
     border: 3px solid black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -44,8 +45,29 @@
     transition: background .25s ease;
 }
 
+.CajaEditarProducto{
+    margin-bottom: 10px;
+}
+
 .BotonEdit{
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.CajaEliminarProducto :hover{
+     background-color: red;
+    transition: background .25s ease;
+}
+
+.ButtonEliminarProducto{
+    background-color: #ED2841;
+     width: 220px;
+    height: 70px;
+    color: #000000;
+    border-radius: 8px;
+    border: 2px solid black;
+    font-family:"Anton", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
 }

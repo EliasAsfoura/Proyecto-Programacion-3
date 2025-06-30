@@ -2,29 +2,29 @@
 import db from "../config/db.js";
 
 // 1. Obtener o crear carrito para un usuario
-// export const obtenerCarritoUsuario = async (req, res) => {
-//   const { usuario_id } = req.params;
+ export const obtenerCarritoUsuario = async (req, res) => {
+   const { usuario_id } = req.params;
 
-//   try {
-//     let [carrito] = await db.query(
-//       "SELECT * FROM carrito_producto WHERE usuario_id = ? ORDER BY id DESC LIMIT 1",
-//       [usuario_id]
-//     );
+   try {
+     let [carrito] = await db.query(
+       "SELECT * FROM carrito_producto WHERE usuario_id = ? ORDER BY id DESC LIMIT 1",
+       [usuario_id]
+     );
 
-//     if (carrito.length === 0) {
-//       const [resultado] = await db.query(
-//         "INSERT INTO carritos (usuario_id) VALUES (?)",
-//         [usuario_id]
-//       );
-//       return res.status(201).json({ id: resultado.insertId });
-//     }
+     if (carrito.length === 0) {
+       const [resultado] = await db.query(
+         "INSERT INTO carritos (usuario_id) VALUES (?)",
+         [usuario_id]
+       );
+       return res.status(201).json({ id: resultado.insertId });
+     }
 
-//     res.json(carrito[0]);
-//   } catch (error) {
-//     console.error("Error al obtener carrito:", error);
-//     res.status(500).json({ msg: "Error al obtener carrito" });
-//   }
-// };
+     res.json(carrito[0]);
+   } catch (error) {
+     console.error("Error al obtener carrito:", error);
+     res.status(500).json({ msg: "Error al obtener carrito" });
+   }
+ };
 
 // 2. Agregar producto al carrito
 export const agregarProductoACarrito = async (req, res) => {

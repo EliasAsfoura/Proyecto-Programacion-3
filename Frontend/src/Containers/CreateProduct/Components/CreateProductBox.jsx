@@ -5,10 +5,9 @@ import axios from "axios";
 const CreateProductBox = () => {
     const [producto, setProducto] = useState({
         nombre: 'Aceite de girasol',
-        descripcion: '',
         precio: 2900,
         stock: 1,
-        imagen_url: 'url de la imagen aqui rey',
+        imagen_url: 'url de la imagen',
         categoria_id: 6, 
         tipo: 'Aceites',
         pais: 'Argentina',
@@ -60,13 +59,12 @@ const CreateProductBox = () => {
                     placeholder="Ingrese el nombre del producto"
                 />
 
-                <label>Descripción</label>
-                <textarea
-                    name="descripcion"
-                    value={producto.descripcion}
+                <label>Tamaño unidad</label>
+                <input
+                    name="tamanio_unidad"
+                    value={producto.tamanio_unidad}
                     onChange={handleChange}
-                    rows="3"
-                    placeholder="Descripción del Producto"
+                    placeholder="Tamaño de la unidad"
                 />
 
                 <label>Tipo</label>
@@ -93,13 +91,6 @@ const CreateProductBox = () => {
                     onChange={handleChange}
                 />
 
-                <label>Tamaño de unidad</label>
-                <input
-                    type="text"
-                    name="tamanio_unidad"
-                    value={producto.tamanio_unidad}
-                    onChange={handleChange}
-                />
 
                 <div className="StockProducto">
                     <label>Stock</label>
