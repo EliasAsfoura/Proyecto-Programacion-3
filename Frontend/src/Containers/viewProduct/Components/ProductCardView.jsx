@@ -29,26 +29,32 @@ const ProductCardView = () => {
   }, [id]);
 
   const handleAgregarAlCarrito = async () => {
-    const usuario_id = parseInt(localStorage.getItem("id"));
+  const token = localStorage.getItem("token");
 
-    if (!usuario_id) {
-      alert("Por favor, iniciá sesión para agregar productos al carrito");
-      return;
-    }
+  if (!token) {
+    alert("Por favor, iniciá sesión para agregar productos al carrito");
+    return;
+  }
 
-    try {
-      await axios.post("http://localhost:3006/api/carrito", {
-        usuario_id,
-        producto_id: producto.id,
-        cantidad: Contador,
-        precio_unitario: producto.precio,
-      });
-      navigate("/carrito");
-    } catch (error) {
-      console.error("No se pudo agregar al carrito", error);
-      alert("No se pudo agregar el producto al carrito");
-    }
-  };
+  try {
+    await axios.post(
+      "http://localhost:3006/api/carrito/agregar",
+      {
+        id_producto: producto.id,
+        cantidad: Contador
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    navigate("/carrito");
+  } catch (error) {
+    console.error("No se pudo agregar al carrito", error);
+    alert("No se pudo agregar el producto al carrito");
+  }
+};
 
 
   if (!producto) return <p>Cargando producto...</p>;

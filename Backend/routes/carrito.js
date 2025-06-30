@@ -1,20 +1,9 @@
-// routes/carrito.js
 import express from 'express';
-import {
-  obtenerCarritoUsuario,
-  agregarProductoACarrito,
-  realizarCheckout
-} from '../controllers/carritoController.js';
+import { agregarProductoAlCarrito } from '../controllers/carritoController.js';
+import verifyToken from '../middlewares/verifyToken.js';
 
 const router = express.Router();
 
-
-router.get('/:usuario_id', obtenerCarritoUsuario);
-
-
-router.post('/', agregarProductoACarrito);
-
-
-router.post('/checkout', realizarCheckout);
+router.post('/agregar', verifyToken, agregarProductoAlCarrito);
 
 export default router;
