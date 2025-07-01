@@ -1,12 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Carrusel1 from "/public/carrusel-images/Carrusel1.png"
-import Carrusel2 from "/public/carrusel-images/Carrusel2.png"
-import Carrusel3 from "/public/carrusel-images/Carrusel3.svg"
-import Carrusel4 from "/public/carrusel-images/Carrusel4.svg"
-import Carrusel5 from "/public/carrusel-images/Carrusel5.svg"
-import Carrusel6 from "/public/carrusel-images/Carrusel6.svg"
+import Carrusel1 from "../Assests-Inicio/Carrusel1.png"
+import Carrusel2 from "../Assests-Inicio/Carrusel2.png"
+import Carrusel3 from "../Assests-Inicio/Carrusel3.svg"
+import Carrusel4 from "../Assests-Inicio/Carrusel4.svg"
+import Carrusel5 from "../Assests-Inicio/Carrusel5.svg"
+import Carrusel6 from "../Assests-Inicio/Carrusel6.svg"
 import "./CarruselStyle.css"
 
 const Carrusel = () => {

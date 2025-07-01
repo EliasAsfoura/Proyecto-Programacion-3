@@ -25,7 +25,7 @@ const Cards = () => {
 
   return (
 <main className="Productos">
-      {filtro && <h2 style={{ color: "#333" }}>Resultados para: "{filtro}"</h2>}
+      {filtro && <h2 style={{ color: "#333",  }}>Resultados para: "{filtro}"</h2>}
       {productos.length === 0 ? (
         <p>No se encontraron productos que coincidan con "{filtro}".</p>
       ) : (

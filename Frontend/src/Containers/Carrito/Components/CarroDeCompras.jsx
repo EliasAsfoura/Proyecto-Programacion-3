@@ -212,7 +212,7 @@ const CarroDeCompras = () => {
           <span>${calcularTotal()}</span>
         </div>
 
-        <button className="BotonCheckout" onClick={handleCheckout}>Hacer checkout</button>
+        <button className="BotonCheckout" onClick={handleCheckout}>Hacer compra</button>
       </aside>
     </>
   );
