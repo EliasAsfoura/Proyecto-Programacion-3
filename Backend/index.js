@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import productoRoutes from './routes/productos.js';
 import carritoRoutes from './routes/carrito.js';
+import ventaRoutes from './routes/ventaRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/productos', productoRoutes);
 app.use('/api/carrito', carritoRoutes);
+app.use('/api/venta', ventaRoutes);
 
 app.get('/', (req, res) => {
   res.send('Servidor funcionando');
