@@ -87,7 +87,6 @@ export const deleteProducto = async (req, res) => {
   const id = req.query.id;
 
 
-  console.log("Que cojones");
   try {
     const [result] = await db.query("DELETE FROM productos WHERE id = ?", [id]);
 
