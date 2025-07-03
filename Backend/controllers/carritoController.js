@@ -1,15 +1,23 @@
 import db from '../config/db.js';
 
+// Funcion para agregar productos al carrito
+
 export const agregarProductoAlCarrito = async (req, res) => {
-  const id_usuario = req.user.id; 
+
+  // Requiere el id del usuario
+  const id_usuario = req.user.id;
+  
+  // Requiere el id del producto y la cantidad del producto
   const { id_producto, cantidad } = req.body;
 
+  // Si no hay datos en el carrito
+  
   if (!id_producto || !cantidad || cantidad <= 0) {
     return res.status(400).json({ msg: 'Datos inválidos para el carrito' });
   }
 
   try {
-    //  Busca si hay un carrito activo
+    // Busca si hay un carrito activo
     const [carritoExistente] = await db.execute(
       'SELECT id FROM carrito WHERE id_usuario = ? AND activo = 1 LIMIT 1',
       [id_usuario]
@@ -42,6 +50,7 @@ export const agregarProductoAlCarrito = async (req, res) => {
         [nuevaCantidad, detalleExistente[0].id]
       );
     } else {
+
       //Si no existe, insertar nuevo detalle
       // buscamos el precio actual del producto
       const [producto] = await db.execute(
@@ -53,8 +62,10 @@ export const agregarProductoAlCarrito = async (req, res) => {
         return res.status(404).json({ msg: 'Producto no encontrado' });
       }
 
+      // Guarda el precio unitario
       const precio_unitario = producto[0].precio;
 
+      // Guarda campos del carrito en las tablas
       await db.execute(
         `INSERT INTO carrito_detalle (id_carrito, id_producto, cantidad, precio_unitario)
          VALUES (?, ?, ?, ?)`,
@@ -68,6 +79,9 @@ export const agregarProductoAlCarrito = async (req, res) => {
     res.status(500).json({ msg: 'Error del servidor al agregar producto al carrito' });
   }
 };
+
+
+ // Muestra productos en el carrito del usuario
 export const obtenerCarritoActual = async (req, res) => {
   const id_usuario = req.user.id;
 
@@ -88,6 +102,8 @@ export const obtenerCarritoActual = async (req, res) => {
     res.status(500).json({ msg: "Error al obtener el carrito" });
   }
 };
+
+
 export const actualizarCantidadProducto = async (req, res) => {
   const id_usuario = req.user.id;
   const { id_producto, cantidad } = req.body;
@@ -152,6 +168,8 @@ export const eliminarProductoDelCarrito = async (req, res) => {
     res.status(500).json({ msg: "Error al eliminar producto" });
   }
 };
+
+ // Logica para eliminar carrito
 export const eliminarCarritoCompleto = async (req, res) => {
   const id_usuario = req.user.id;
 

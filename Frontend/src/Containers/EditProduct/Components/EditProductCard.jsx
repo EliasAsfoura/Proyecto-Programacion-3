@@ -8,6 +8,8 @@ const EditProductCard = () => {
   const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
   const [editMode, setEditMode] = useState(false); // activa edición
+ 
+  // Estado del formulario
   const [formData, setFormData] = useState({
     nombre: "",
     precio: "",
@@ -21,6 +23,8 @@ const EditProductCard = () => {
   });
 
   useEffect(() => {
+
+    // Trae el producto por id para editarlo 
     const fetchProducto = async () => {
       try {
         const res = await axios.get(`http://localhost:3006/api/productos/${id}`);
@@ -44,6 +48,7 @@ const EditProductCard = () => {
     fetchProducto();
   }, [id]);
 
+  // Funcion para eliminar productos
   const handleEliminar = async () => {
     const confirmar = window.confirm("¿Estás seguro de que querés eliminar este producto?");
     if (!confirmar) return;
@@ -58,10 +63,12 @@ const EditProductCard = () => {
     }
   };
 
+  // Funcion para hacer los cambios
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Funcion para guardar los cambios
   const handleGuardarCambios = async () => {
     try {
       await axios.put(`http://localhost:3006/api/productos/${id}`, formData);

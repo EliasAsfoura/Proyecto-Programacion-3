@@ -7,10 +7,14 @@ const LoginBox = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // Funcion para login
   const handleLogin = async (e) => {
+
+    // Evita que la pagina se recargue
     e.preventDefault();
 
     try {
+      // Postea los datos del login
       const res = await fetch("http://localhost:3006/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -18,8 +22,10 @@ const LoginBox = () => {
       });
 
       const data = await res.json();
-      console.log("💬 Respuesta login:", data);
+      console.log(" Respuesta login:", data);
 
+
+      // Si puede postear los datos le asigna token, nombre, rol y id
       if (res.ok) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("nombre", data.nombre);

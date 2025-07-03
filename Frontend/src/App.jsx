@@ -15,11 +15,13 @@ import EditProduct from "./Containers/EditProduct"
 function App() {
  
   return (
+
+// Enrutamiento con react-router-dom
 <Router>
       <Routes>
       <Route path="/" element={<Navigate to="/inicio" replace />} />
         <Route path="/inicio" element ={<Inicio/>}/>
-        <Route path="/productos" element ={<Productos/>}/>
+        <Route path="/productos" element ={<Productos nombre= "julian"/>}/>
         <Route path="/contacto" element ={<Contacto/>}/>
         <Route path="/carrito" element ={<Carrito/>}/>
         <Route path="/login" element ={<Login/>}/>

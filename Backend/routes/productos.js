@@ -3,12 +3,22 @@ import { getProducts, getProductoById, createProduct } from "../controllers/prod
 import { deleteProducto } from '../controllers/productController.js';
 import { updateProducto } from "../controllers/productController.js";
 
+// Crea un enrutador modular de Express.
 const router = express.Router();
 
+// Ruta para obtener productos
 router.get("/", getProducts);
+
+// Ruta para obtener productos por id
 router.get("/:id", getProductoById);
-router.post("/", createProduct); 
+
+// Ruta para crear productos
+router.post("/", createProduct);
+
+// Ruta eliminar producto
 router.delete('/', deleteProducto);
+
+// Ruta para edita productos
 router.put("/:id", updateProducto);
 
 

@@ -8,11 +8,17 @@ const CarroDeCompras = () => {
   const navigate = useNavigate(); 
 
   useEffect(() => {
+
     const fetchCarrito = async () => {
+
+      // Obtiene el token de localstorage
       const token = localStorage.getItem("token");
+
+      // Si no hay token da un break(No sigue la ejecucion del codigo)
       if (!token) return;
 
       try {
+
         const res = await axios.get("http://localhost:3006/api/carrito", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -27,6 +33,8 @@ const CarroDeCompras = () => {
     fetchCarrito();
   }, []);
 
+  // Funcion Actualiza la cantidad de un producto específico en el carrito.
+  // Usa map para mantener los demás productos sin cambios.
   const handleCantidadChange = (id_producto, nuevaCantidad) => {
     setCarrito(prev =>
       prev.map(item =>
@@ -37,6 +45,7 @@ const CarroDeCompras = () => {
     );
   };
 
+  // Funcion que actualiza la cantidad para el delete
   const handleActualizarCantidad = async (id_producto, cantidad) => {
     const token = localStorage.getItem("token");
 
@@ -64,6 +73,7 @@ const CarroDeCompras = () => {
     }
   };
 
+  // Funcion para vaciar todo el carrito
   const handleVaciarCarrito = async () => {
     const token = localStorage.getItem("token");
 
@@ -79,6 +89,8 @@ const CarroDeCompras = () => {
     }
   };
 
+
+  // Funcion para actualizar carrito en general
   const handleActualizarCarritoCompleto = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -112,6 +124,7 @@ const CarroDeCompras = () => {
     }
   };
 
+  // Funcion para hacer la compra
   const handleCheckout = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -125,6 +138,7 @@ const CarroDeCompras = () => {
 
     let mensaje = `✅ Compra realizada con éxito\nID de Venta: ${id_venta}\n\nDetalle:\n`;
 
+    // Resumen de la compra
     resumen.forEach(item => {
       mensaje += `• ${item.cantidad} x ${item.nombre} a $${item.precio_unitario} c/u\n`;
     });

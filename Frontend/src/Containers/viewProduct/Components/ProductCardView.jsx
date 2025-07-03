@@ -8,14 +8,20 @@ const ProductCardView = () => {
   const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
   const [Contador, setContador] = useState(1);
+
+  //Funcion para volver a productos
   const handleVolver = () => {
     navigate("/productos");
   };
 
+  // Setea el contador de stock
   const increment = () => setContador(prev => prev + 1);
   const decrement = () => setContador(prev => (prev > 1 ? prev - 1 : 1));
 
+  // useEffect que segun el id va cambiando el producto
   useEffect(() => {
+
+    // Trae el producto por id en la url
     const fetchProducto = async () => {
       try {
         const res = await axios.get(`http://localhost:3006/api/productos/${id}`);
@@ -28,7 +34,10 @@ const ProductCardView = () => {
     fetchProducto();
   }, [id]);
 
+  // Funciopn para agregar al carrito
   const handleAgregarAlCarrito = async () => {
+  
+  //Obtiene el token del localstorage
   const token = localStorage.getItem("token");
 
   if (!token) {
@@ -36,7 +45,9 @@ const ProductCardView = () => {
     return;
   }
 
+
   try {
+    // Postea la cantidad y el producto agregado al carrito
     await axios.post(
       "http://localhost:3006/api/carrito/agregar",
       {

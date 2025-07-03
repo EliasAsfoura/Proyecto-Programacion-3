@@ -1,9 +1,10 @@
 import db from '../config/db.js'
+
 export const realizarCheckout = async (req, res) => {
   const id_usuario = req.user.id;
 
   try {
-    // 1. Buscar carrito activo
+    // Buscar carrito activo
     const [carrito] = await db.execute(
       "SELECT id FROM carrito WHERE id_usuario = ? AND activo = 1 LIMIT 1",
       [id_usuario]
@@ -15,7 +16,7 @@ export const realizarCheckout = async (req, res) => {
 
     const id_carrito = carrito[0].id;
 
-    // 2. Obtener productos del carrito_detalle
+    // Obtener productos del carrito_detalle
     const [items] = await db.execute(
       `SELECT id_producto, cantidad, precio_unitario
        FROM carrito_detalle
@@ -27,13 +28,13 @@ export const realizarCheckout = async (req, res) => {
       return res.status(400).json({ msg: "El carrito está vacío" });
     }
 
-    // 3. Calcular total
+    // Calcular total
     const total = items.reduce(
       (acc, item) => acc + item.cantidad * item.precio_unitario,
       0
     );
 
-    // 4. Insertar en tabla venta
+    // Insertar en tabla venta
     const [venta] = await db.execute(
       `INSERT INTO venta (id_usuario, fecha, total)
        VALUES (?, NOW(), ?)`,
@@ -42,7 +43,7 @@ export const realizarCheckout = async (req, res) => {
 
     const id_venta = venta.insertId;
 
-    // 5. Insertar en detalle_venta
+    // Insertar en detalle_venta
     for (const item of items) {
       await db.execute(
         `INSERT INTO detalle_venta (id_venta, id_producto, cantidad, precio_unitario)
@@ -58,7 +59,7 @@ export const realizarCheckout = async (req, res) => {
        WHERE dv.id_venta = ?`,
       [id_venta]
     );
-    // 6. Actualizar stock y eliminar si llega a 0
+    // Actualizar stock y eliminar si llega a 0
 for (const item of items) {
   await db.execute(
     `UPDATE productos SET stock = stock - ? WHERE id = ?`,
@@ -74,7 +75,7 @@ for (const item of items) {
 
 
 
-    // 7. Eliminar el carrito (activado ON DELETE CASCADE)
+    // Eliminar el carrito (activado ON DELETE CASCADE)
     await db.execute("DELETE FROM carrito WHERE id = ?", [id_carrito]);
 
 

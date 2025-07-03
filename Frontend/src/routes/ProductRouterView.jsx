@@ -5,6 +5,7 @@ import ProductCardView from "../Containers/viewProduct/Components/ProductCardVie
 import EditProductCard from "../Containers/EditProduct/Components/EditProductCard";
 
 
+// Funcion para mostrar EditProduct o ViewProduct segun el rol
 const ProductRouterView = () => {
   const { id } = useParams();
   const rol = localStorage.getItem("rol");

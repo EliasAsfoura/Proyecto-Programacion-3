@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import LogoHeader from "../../assets/LogoHeader.svg";
 import InicioHeader from "../../assets/InicioHeader.svg";
 import ProductosHeader from "../../assets/ProductosHeader.svg";
@@ -9,18 +8,26 @@ import ContactoHeader from "../../assets/ContactoHeader.svg";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginHeader from "../../assets/LoginHeader.svg";
-
 import "./HeaderStyle.css";
 
 const Header = () => {
   const [busqueda, setBusqueda] = useState("");
   const [carrito, setCarrito] = useState([]);
   const navigate = useNavigate();
+
+  // Obtiene el rol del usuario desde el localstorage
   const rol = localStorage.getItem("rol");
 
+  // Es un useEffect porque va cambiando
   useEffect(() => {
+
+    // Funcio para cargar carrito en el header
     const fetchCarrito = async () => {
+
+      // Obtiene el token del localstorage
       const token = localStorage.getItem("token");
+
+      // Si no hay token da un break(osea detiene la ejecicion de codigo)
       if (!token) return;
 
       try {
@@ -40,6 +47,7 @@ const Header = () => {
 
   const cantidadDeProductosUnicos = carrito.length;
 
+  // Funcion para buscar productos
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && busqueda.trim() !== "") {
       navigate(`/productos?nombre=${encodeURIComponent(busqueda.trim())}`);

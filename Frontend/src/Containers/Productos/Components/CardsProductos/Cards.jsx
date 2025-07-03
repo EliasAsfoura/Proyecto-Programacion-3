@@ -10,6 +10,7 @@ const Cards = () => {
   const query = new URLSearchParams(location.search);
   const filtro = query.get("nombre") || "";
 
+  // useEffect encargado de ir mostrando las cards segun lo que se busque en el filtro
   useEffect(() => {
     const fetchProductos = async () => {
       try {
@@ -27,7 +28,7 @@ const Cards = () => {
 <main className="Productos">
       {filtro && <h2 style={{ color: "#333",  }}>Resultados para: "{filtro}"</h2>}
       {productos.length === 0 ? (
-        <p>No se encontraron productos que coincidan con "{filtro}".</p>
+        <p>No se encontraron productos que coincidan con "{filtro}" .</p>
       ) : (
         productos.map((producto) => (
           <div className="CardProducto" key={producto.id}>
@@ -43,6 +44,7 @@ const Cards = () => {
               <div className="CajaBotonProducto">
                 <button>
                   <p>Comprar</p>
+                  <p>{}</p>
                 </button>
               </div>
             </a>

@@ -4,20 +4,21 @@ import axios from "axios";
 
 const CreateProductBox = () => {
     const [producto, setProducto] = useState({
-        nombre: 'Aceite de girasol',
-        precio: 2900,
+        nombre: 'Aceite girasol',
+        precio: 1,
         stock: 1,
         imagen_url: 'url de la imagen',
         categoria_id: 6, 
         tipo: 'Aceites',
         pais: 'Argentina',
-        tipo_de_envase: 'Plástico',
+        tipo_de_envase: 'Plastico',
         tamanio_unidad: '900ml'
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProducto({ ...producto, [name]: value });
+        
     };
 
     const handleSubmit = async (e) => {
@@ -73,6 +74,7 @@ const CreateProductBox = () => {
                     name="tipo"
                     value={producto.tipo}
                     onChange={handleChange}
+                    placeholder="Tipo de producto"
                 />
 
                 <label>País</label>
@@ -81,6 +83,7 @@ const CreateProductBox = () => {
                     name="pais"
                     value={producto.pais}
                     onChange={handleChange}
+                    placeholder="Pais procediente"
                 />
 
                 <label>Tipo de envase</label>
@@ -89,6 +92,7 @@ const CreateProductBox = () => {
                     name="tipo_de_envase"
                     value={producto.tipo_de_envase}
                     onChange={handleChange}
+                    placeholder="Tipo de envase"
                 />
 
 
@@ -99,6 +103,7 @@ const CreateProductBox = () => {
                         name="stock"
                         value={producto.stock}
                         onChange={handleChange}
+                        placeholder="Stock del producto"
                     />
                 </div>
 
@@ -109,6 +114,7 @@ const CreateProductBox = () => {
                         name="precio"
                         value={producto.precio}
                         onChange={handleChange}
+                        placeholder="Precio del producto"
                     />
                 </div>
 

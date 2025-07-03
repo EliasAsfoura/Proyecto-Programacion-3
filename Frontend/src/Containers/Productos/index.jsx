@@ -8,7 +8,7 @@ const Productos = () => {
         <>
         <Header/>
         <div style={{marginRight:"120px"}}> 
-            <Cards/>
+            <Cards />
         </div>
         <Footer/>
         </>

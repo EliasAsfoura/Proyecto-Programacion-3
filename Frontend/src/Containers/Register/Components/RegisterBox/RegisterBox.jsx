@@ -9,10 +9,15 @@ const RegisterBox = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+// Funcion para registrar usuario
   const handleRegister = async (e) => {
+
+    // Evita que se recargue la pagina
     e.preventDefault();
 
     try {
+
+      // Postea email,nombre y password a la base de datos
       const res = await axios.post("http://localhost:3006/api/auth/register", {
         email,
         nombre,
@@ -23,6 +28,8 @@ const RegisterBox = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("nombre", res.data.nombre);
       localStorage.setItem("rol", res.data.rol);
+
+      // Redirije a productos
       navigate("/productos");
 
     } catch (err) {

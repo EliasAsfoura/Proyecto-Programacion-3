@@ -8,6 +8,7 @@ import "./AsideStyle.css"
 const AsideInicioDiv = () => {
      const navigate = useNavigate();
 
+     // Funcion con navigate para que al dar click redirija a /productos
     const handleClick = () => {
         navigate("/productos");
     };
